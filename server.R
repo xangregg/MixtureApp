@@ -2,10 +2,7 @@ library(shiny)
 library(mixtools)
 shinyServer(function(input, output) {
     
-    output$fit <- reactive({
-        normalmixEM(faithful$eruptions, k=input$k)
-
-    })
+    
     output$main_plot <- renderPlot({
         fit2 <- normalmixEM(faithful$eruptions, k=input$k);
         
